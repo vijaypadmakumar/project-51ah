@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Project 51A(h): design tokens
+   Colours measured from the Wix "Architect Portfolio (Simple)" reference.
+   Switch theme with <html data-theme="sand | laterite | night">.
+   ========================================================================== */
+
+:root,
+[data-theme="sand"] {
+  --bg: #FAF4E8;
+  --ink: #754F0D;
+  --accent: #A23012;
+  --on-accent: #FFFFFF;
+  --muted: #7E6130;
+  --rule: #C9B797;
+  --alt: #F3ECDD;
+  --foot: #E9E3D5;
+  --tile: #CEDBE1;
+  --ph: #E2D6C0;
+  --ph2: #D5C6AA;
+  --ph3: #CBBBA0;
+  --shadow: rgba(60, 40, 5, 0.12);
+  color-scheme: light;
+}
+
+[data-theme="laterite"] {
+  --bg: #EFEDE7;
+  --ink: #171614;
+  --accent: #A3472A;
+  --on-accent: #FFFFFF;
+  --muted: #5E5A52;
+  --rule: #CFCAC0;
+  --alt: #E4E1D9;
+  --foot: #E4E1D9;
+  --tile: #D6D1C7;
+  --ph: #C4BDB0;
+  --ph2: #B9A08F;
+  --ph3: #ADA698;
+  --shadow: rgba(0, 0, 0, 0.12);
+  color-scheme: light;
+}
+
+[data-theme="night"] {
+  --bg: #161513;
+  --ink: #ECE8E0;
+  --accent: #E08C72;
+  --on-accent: #161513;
+  --muted: #A39E94;
+  --rule: #3A3732;
+  --alt: #1F1E1B;
+  --foot: #1F1E1B;
+  --tile: #2F3538;
+  --ph: #3A3632;
+  --ph2: #45403A;
+  --ph3: #2F2C29;
+  --shadow: rgba(0, 0, 0, 0.4);
+  color-scheme: dark;
+}
+
+:root {
+  /* Type */
+  --font: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --fs-display: clamp(44px, 6vw, 86px);   /* page titles */
+  --fs-h1-long: clamp(34px, 5.2vw, 76px); /* long statement headlines */
+  --fs-h2: clamp(36px, 4.4vw, 60px);      /* section titles */
+  --fs-h3: clamp(24px, 2.6vw, 34px);      /* sub-section titles */
+  --fs-lead: clamp(17px, 1.4vw, 18px);
+  --fs-body: 15px;
+  --fs-small: 14px;
+  --fs-tiny: 12px;
+  --track-tight: -0.045em;
+  --track: -0.035em;
+
+  /* Layout */
+  --max: 1240px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --section: clamp(64px, 9vw, 128px);
+  --header-h: 88px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --ease-wipe: cubic-bezier(.77, 0, .18, 1);
+  --ease-blind: cubic-bezier(.65, 0, .35, 1);
+  --t-fast: 300ms;
+}

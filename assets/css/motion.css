@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Motion
+   main.js adds .js to <html> and .is-in to each element as it scrolls into
+   view. Without JavaScript, or with reduced motion, everything shows at once.
+
+   .rv     fade in
+   .up     fade and rise
+   .bi     blur in (project and portrait images)
+   .wipe   image wipes in from the left
+   .mask   headline rises from behind a mask: <span class="mask"><span>…</span></span>
+   [data-blinds]  blinds reveal on large images (strips added by main.js)
+   .d1–.d5 stagger delays
+   ========================================================================== */
+
+.mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+.mask > span { display: block; }
+
+.d1 { --delay: 150ms; }
+.d2 { --delay: 300ms; }
+.d3 { --delay: 450ms; }
+.d4 { --delay: 600ms; }
+.d5 { --delay: 900ms; }
+
+@keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+
+.js body { animation: pageIn 700ms ease-out both; }
+
+.js .rv {
+  opacity: 0;
+  transition: opacity 900ms ease-out var(--delay, 0ms);
+}
+.js .up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 800ms var(--ease-out) var(--delay, 0ms), transform 800ms var(--ease-out) var(--delay, 0ms);
+}
+.js .bi {
+  opacity: 0.5;
+  filter: blur(18px);
+  transition: opacity 1000ms ease-out var(--delay, 0ms), filter 1000ms ease-out var(--delay, 0ms);
+}
+.js .wipe {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1100ms var(--ease-wipe) var(--delay, 0ms);
+}
+.js .mask > span {
+  transform: translateY(110%);
+  transition: transform 1000ms var(--ease-out) var(--delay, 0ms);
+}
+
+.js .rv.is-in,
+.js .up.is-in,
+.js .bi.is-in { opacity: 1; transform: none; filter: none; }
+.js .wipe.is-in { clip-path: inset(0 0 0 0); }
+.js .mask.is-in > span { transform: none; }
+
+/* Gallery image swap */
+@keyframes wipeIn { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+.swap { animation: wipeIn 900ms var(--ease-wipe) both; }
+
+/* Tab panel swap */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.fade-swap { animation: fadeIn 500ms ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .js .rv,
+  .js .up,
+  .js .bi,
+  .js .wipe,
+  .js .mask > span {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    clip-path: none;
+  }
+  .blinds { display: none; }
+  [data-parallax] { transform: none !important; }
+  .draw-line path { stroke-dashoffset: 0 !important; }
+}

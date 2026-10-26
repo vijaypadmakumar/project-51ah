@@ -1,0 +1,178 @@
+/* ==========================================================================
+   Page layouts
+   Breakpoints: phones up to 720px, tablets 721–1024px, desktop above.
+   ========================================================================== */
+
+/* Home: hero -------------------------------------------------------------- */
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 48px;
+}
+.hero__text {
+  flex: 1 1 380px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 48px;
+  padding-top: 22px;
+}
+.hero__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+.hero__brand { display: flex; flex-direction: column; gap: 18px; }
+.hero__brand .media { width: 150px; --ar: 3 / 4; }
+.hero__copy { display: flex; flex-direction: column; gap: 20px; padding-bottom: 8px; }
+.hero__copy .lead { max-width: 440px; }
+.hero__visual {
+  position: relative;
+  flex: 1.15 1 460px;
+  min-width: 0;
+  height: clamp(520px, 50vw, 760px);
+}
+.hero__visual > .media { position: absolute; inset: 0; aspect-ratio: auto; }
+.hero__visual > .media .ph__label { top: 88px; bottom: auto; max-width: 260px; }
+.hero__cta { position: absolute; top: 14px; right: 0; z-index: 2; }
+.hero__tile { position: absolute; right: 0; bottom: 0; z-index: 2; width: clamp(150px, 29%, 230px); }
+
+/* Tablet: text above, picture below */
+@media (max-width: 1024px) {
+  .hero__text { flex-basis: 100%; gap: 56px; }
+  .hero__visual { flex-basis: 100%; height: clamp(460px, 72vw, 720px); }
+}
+
+@media (max-width: 720px) {
+  .hero { gap: 28px; }
+  .hero__text { gap: 40px; padding-top: 12px; }
+  .hero__brand { gap: 12px; }
+  .hero__brand .media { width: 96px; }
+  .hero__visual { height: min(128vw, 600px); margin-inline: calc(var(--gutter) * -1); }
+  .hero__visual > .media .ph__label { top: auto; bottom: 18px; max-width: 55%; }
+  .hero__cta { top: 12px; right: var(--gutter); }
+  .hero__tile { width: 42%; max-width: 190px; }
+}
+
+/* Home: practice intro ---------------------------------------------------- */
+
+.intro__copy { padding-top: clamp(0px, 8vw, 120px); }
+.wide-media { margin-top: 40px; --ar: 16 / 7; }
+
+@media (max-width: 760px) {
+  .intro__copy { padding-top: 0; }
+  .wide-media { --ar: 4 / 3; }
+}
+
+/* Home: numbers band ------------------------------------------------------ */
+
+.numbers .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px 64px;
+  padding-block: clamp(64px, 8vw, 112px);
+}
+.numbers__note { flex: 1 1 340px; max-width: 470px; display: flex; gap: 20px; align-items: flex-start; line-height: 1.5; }
+.numbers .stats { flex: 0 1 380px; }
+.numbers .draw-line { bottom: 0; height: 70%; }
+
+/* Home: Article clause ---------------------------------------------------- */
+
+.clause .split > .media { flex: 0 0 auto; width: 150px; --ar: 3 / 4; }
+
+@media (max-width: 720px) {
+  .clause .split { flex-wrap: nowrap; gap: 20px; align-items: flex-start; }
+  .clause .split > .media { width: 96px; }
+}
+
+/* Inquiry band ------------------------------------------------------------ */
+
+.cta-band { margin-top: var(--section); }
+.cta-band .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding-block: clamp(96px, 11vw, 160px);
+  text-align: center;
+}
+.cta-band h2 { font-size: clamp(30px, 4vw, 56px); font-weight: 400; line-height: 1.05; letter-spacing: -0.04em; }
+.cta-band .draw-line { top: 0; height: 60%; }
+
+/* Inner page head --------------------------------------------------------- */
+
+.page-head { padding-top: clamp(32px, 5vw, 80px); }
+.page-head__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-top: 28px;
+}
+.page-head__row > :first-child { flex: 999 1 520px; min-width: 0; }
+.page-head__row > .lead { flex: 1 1 320px; max-width: 400px; }
+
+/* Work -------------------------------------------------------------------- */
+
+.work-main { padding-bottom: clamp(80px, 10vw, 120px); }
+
+/* Project ----------------------------------------------------------------- */
+
+.lead-media { --ar: 16 / 8; }
+.chapter { padding-top: clamp(64px, 8vw, 104px); }
+.chapter figure .media { --ar: 16 / 8; }
+.gallery { padding-top: clamp(80px, 10vw, 128px); }
+.pager-wrap { padding-block: clamp(80px, 10vw, 128px) clamp(64px, 7vw, 96px); }
+
+@media (max-width: 720px) {
+  .lead-media,
+  .chapter figure .media { --ar: 4 / 3; }
+  .gallery__stage .media { --ar: 4 / 3; }
+}
+
+/* Practice ---------------------------------------------------------------- */
+
+.practice-intro h1 {
+  max-width: 1000px;
+  font-size: var(--fs-h1-long);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: var(--track-tight);
+}
+.practice-media { margin-top: 40px; --ar: 16 / 7; }
+
+@media (max-width: 720px) {
+  .practice-media { --ar: 4 / 3; }
+}
+
+/* Contact ----------------------------------------------------------------- */
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 48px 64px;
+  padding-bottom: var(--section);
+}
+.contact-grid__info { flex: 1 1 300px; max-width: 420px; display: flex; flex-direction: column; gap: 28px; }
+.contact-grid__form { flex: 999 1 420px; max-width: 640px; min-width: 0; }
+.contact-list { display: flex; flex-direction: column; gap: 16px; font-size: var(--fs-body); line-height: 1.6; }
+.contact-list dt { font-size: var(--fs-tiny); color: var(--muted); }
+.contact-list a { align-self: flex-start; }
+.map-media { --ar: 16 / 7; margin-top: 0; }
+
+@media (max-width: 720px) {
+  .map-media { --ar: 4 / 3; }
+}
+
+/* 404 --------------------------------------------------------------------- */
+
+.not-found { min-height: 60vh; padding-block: var(--section); display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+
+.band.numbers { margin-top: var(--section); }

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-IN" data-theme="sand">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact · Project 51A(h)</title>
+<meta name="description" content="Start an inquiry with Project 51A(h), architects in Kottayam, Kerala.">
+<meta name="theme-color" content="#FAF4E8">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Project 51A(h)">
+<meta property="og:title" content="Contact · Project 51A(h)">
+<meta property="og:description" content="Start an inquiry with Project 51A(h), architects in Kottayam, Kerala.">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+<!-- Font: Inter Tight (stand-in for a Helvetica-style grotesk). Remove these
+     three lines to use the system Helvetica/Arial fallback instead. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300..600&amp;display=swap">
+
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/motion.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+
+<script>document.documentElement.classList.add('js');</script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/contact.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header rv">
+<div class="container site-header__inner">
+<a class="logo" href="index.html">Project 51A(h)</a>
+<nav class="site-nav" aria-label="Main">
+<a class="ul" href="work.html">Work</a>
+<a class="ul" href="practice.html">Practice</a>
+<a class="ul" href="practice.html#studio">Studio</a>
+<a class="btn" href="contact.html">Start an inquiry</a>
+</nav>
+<button class="menu-toggle" type="button"><span class="menu-toggle__label">Menu</span><span class="menu-toggle__icon" aria-hidden="true"></span></button>
+</div>
+</header>
+
+<main id="main">
+<section class="container page-head">
+<div class="page-head__row" style="margin-top: 0; margin-bottom: clamp(40px, 6vw, 72px)">
+<h1 class="display"><span class="mask"><span>Start an inquiry</span></span></h1>
+<p class="lead rv d2">Tell us about the site and the people who will use it.</p>
+</div>
+</section>
+
+<section class="container" aria-label="Contact details and form">
+<div class="contact-grid rule-top">
+<div class="contact-grid__info rv">
+<dl class="contact-list">
+<div><dt>Studio</dt><dd>[Street address]<br>Kottayam, Kerala [PIN]</dd></div>
+<div><dt>Phone</dt><dd><a class="ul" href="tel:+910000000000">[+91 phone]</a></dd></div>
+<div><dt>WhatsApp</dt><dd><a class="ul" href="https://wa.me/910000000000" rel="noopener">Message the studio</a></dd></div>
+<div><dt>Email</dt><dd><a class="ul" href="mailto:studio@example.com">[studio email]</a></dd></div>
+<div><dt>Hours</dt><dd>[Monday to Saturday, 10:00 to 18:00]</dd></div>
+</dl>
+</div>
+<div class="contact-grid__form rv d1">
+<form class="form" id="inquiry-form" novalidate>
+<label class="field">Name
+<input type="text" name="name" autocomplete="name" required>
+<span class="field__error" aria-live="polite"></span>
+</label>
+<label class="field">Phone or email
+<input type="text" name="contact" autocomplete="email" required>
+<span class="field__error" aria-live="polite"></span>
+</label>
+<label class="field">Site location
+<input type="text" name="site" autocomplete="address-level2">
+<span class="field__error"></span>
+</label>
+<label class="field">Type of project
+<select name="type">
+<option>New home</option>
+<option>Renovation or reuse</option>
+<option>Interiors</option>
+<option>Institution or workplace</option>
+<option>Landscape</option>
+<option>Something else</option>
+</select>
+<span class="field__error"></span>
+</label>
+<label class="field field--full">Your question
+<textarea name="message" rows="4" required></textarea>
+<span class="field__error" aria-live="polite"></span>
+</label>
+<div class="form__actions">
+<button type="submit" class="btn btn--lg">Send inquiry</button>
+<p class="form__status" id="form-status" role="status"></p>
+</div>
+</form>
+</div>
+</div>
+</section>
+
+<section class="container" aria-label="Map" style="padding-bottom: var(--section)">
+<div class="media map-media" data-tone="alt" data-blinds role="img" aria-label="Placeholder: map or studio entrance"><span class="ph__label">IMAGE · Map or a photograph of the studio entrance · 16:7<code>assets/images/contact/studio-entrance.jpg</code></span></div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__top">
+<div class="site-footer__social">
+<a class="ul" href="https://instagram.com/" rel="noopener">Instagram</a>
+<a class="ul" href="https://linkedin.com/" rel="noopener">LinkedIn</a>
+<a class="ul" href="https://wa.me/910000000000" rel="noopener">WhatsApp</a>
+</div>
+<div class="site-footer__cols">
+<nav aria-label="Footer">
+<a class="ul" href="work.html">Work</a>
+<a class="ul" href="practice.html">Practice</a>
+<a class="ul" href="practice.html#studio">Studio</a>
+<a class="ul" href="contact.html">Contact</a>
+</nav>
+<div>
+<p><a class="ul" href="mailto:studio@example.com">[studio email]</a><br><a class="ul" href="tel:+910000000000">[+91 phone]</a></p>
+<p style="margin-top: 12px">[Street address]<br>Kottayam, Kerala [PIN]</p>
+</div>
+</div>
+</div>
+<p class="site-footer__mark">Project 51A(h)</p>
+<div class="site-footer__legal tiny muted">
+<span>© <span data-year>2026</span> Project 51A(h), Kottayam</span>
+<span>Inspired by Article 51A(h) of the Constitution of India</span>
+</div>
+</div>
+</footer>
+</body>
+</html>
